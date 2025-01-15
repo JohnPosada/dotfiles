@@ -1,0 +1,7 @@
+[user]
+	name = JohnPosada
+	email = johnposada2000@gmail.com
+[core]
+	editor = nvim
+[credential]
+	helper = store
