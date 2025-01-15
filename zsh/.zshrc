@@ -146,11 +146,13 @@ alias c="clear"
 
 alias fh='find . -name '
 
-alias zshcon='nvim ~/dotfile/zsh/.zshrc'
+alias zshcon='nvim ~/dotfiles/zsh/.zshrc'
 
 alias pwoff ='poweroff'
 
 alias bat="batcat"
+
+# alias n='nnn'
 
 FNM_PATH="/home/johnposada/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
@@ -175,4 +177,19 @@ PATH=~/.console-ninja/.bin:$PATH
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$PATH:$HOME/.local/kitty.app/bin"
+
+#nnn file manager config
+export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$UNKNOWN"
+export NNN_PLUG="p:preview-tabbed f:fzcd t:togglex n:preview-tui g:gsconnect l:launch u:upload d:dups m:moclyrics b:bulknew i:imgresize r:renamer w:wallpaper"
+
+n() {
+    # Ejecuta nnn y guarda el último directorio visitado
+    NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+    nnn -H "$@"
+    if [ -f "$NNN_TMPFILE" ]; then
+        . "$NNN_TMPFILE"
+        rm -f "$NNN_TMPFILE"
+    fi
+}
 

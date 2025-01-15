@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=flameshot
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=flameshot
+Name=flameshot
+Comment[en_US]=flameshot
+Comment=flameshot
