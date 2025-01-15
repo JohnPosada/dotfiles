@@ -73,7 +73,8 @@ FZF_BASE="$HOME/.fzf"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git
+plugins=(
+  git
 	docker
   z
   docker-compose
@@ -90,6 +91,8 @@ plugins=(git
 	fzf
   copyfile
   history
+  forgit
+  fzf-zsh-plugin
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -143,7 +146,7 @@ alias c="clear"
 
 alias fh='find . -name '
 
-alias zshcon='nvim ~/.zshrc'
+alias zshcon='nvim ~/dotfile/zsh/.zshrc'
 
 alias pwoff ='poweroff'
 
